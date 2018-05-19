@@ -1,0 +1,36 @@
+﻿@model EmployeeLeaveManagementApp.ViewModel.LoginInfo
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script>
+        $(document).ready(function () {
+            $("#Email").click(function () {
+                $("#ShowEmail").text("Email");
+            });
+            $("#Password").click(function () {
+                $("#ShowPassword").text("Password");
+            });
+
+        });
+
+        $("#leaveTakenValidasion").validate({
+            rules: {
+
+                Email: "required",
+                Password: "required",
+
+            },
+            messages: {
+
+                Email: "Please Enter Your Email!",
+                Password: "Please Enter Your Password!",
+            }
+        });
+    </script>
+}
+

@@ -1,0 +1,30 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Web;
+
+namespace EmployeeLeaveManagementApp.Models
+{
+    public class EmployeeLeaveRequest
+    {
+        public int Id { get; set; }
+        [Required]
+        public int EmployeeId { get; set; }
+        [Required]
+        public int LeaveTypeId { get; set; }
+        [Required]
+        public string Reason { get; set; }
+        [Required]
+        [DataType(DataType.Date)]
+        public DateTime StartDate { get; set; }
+        [Required]
+        [DataType(DataType.Date)]
+        public DateTime EndDate { get; set; }
+
+        public DateTime EntryDate { get; set; }
+        [Required]
+        public int TotalDay { get; set; }
+        public string Status { get; set; }
+    }
+}
